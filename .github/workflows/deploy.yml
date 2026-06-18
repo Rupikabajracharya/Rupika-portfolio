@@ -32,6 +32,3 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-Śaugat is typing
-Compose
-Write to Prime Creative Hub UI/UX 2025/26
