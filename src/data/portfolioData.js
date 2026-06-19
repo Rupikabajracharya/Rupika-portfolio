@@ -29,7 +29,6 @@ const portfolioData = {
       { icon: 'Camera',  label: 'Photography' },
       { icon: 'Music',   label: 'Music' },
       { icon: 'Plane',   label: 'Travel' },
-      { icon: 'Monitor', label: 'Tech' },
     ],
     languages: [
       { name: 'English', level: 80, note: 'Fluent' },

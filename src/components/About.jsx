@@ -1,7 +1,7 @@
-import { Palette, Camera, Music, Plane, Monitor } from 'lucide-react'
+import { Palette, Camera, Music, Plane } from 'lucide-react'
 import portfolioData from '../data/portfolioData'
 
-const iconMap = { Palette, Camera, Music, Plane, Monitor }
+const iconMap = { Palette, Camera, Music, Plane }
 
 function LangRing({ level, name }) {
   const size = 72
@@ -40,13 +40,32 @@ export default function About() {
   const { about } = portfolioData
 
   return (
-    <section id="about" className="py-24 px-6" style={{ backgroundColor: '#07071a' }}>
+    <section id="about" className="py-28 px-6" style={{ backgroundColor: '#07071a' }}>
       <div className="max-w-6xl mx-auto">
-        <p className="text-violet-400 text-xs font-semibold tracking-widest uppercase mb-12">
-          About Me
-        </p>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        {/* "About Me" label with decorative quotes */}
+        <div className="relative inline-block mb-14">
+          <span
+            className="absolute -top-5 -left-3 pointer-events-none select-none leading-none"
+            style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: '4rem',
+              fontWeight: 900,
+              lineHeight: 1,
+              background: 'linear-gradient(130deg, rgba(167,100,255,0.55), rgba(124,58,237,0.15))',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            &ldquo;
+          </span>
+          <p className="text-violet-400 text-xs font-semibold tracking-widest uppercase px-2">
+            About Me
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-32">
 
           {/* Left — quote + bio */}
           <div className="reveal">
@@ -61,51 +80,33 @@ export default function About() {
               {about.quote}
             </h2>
 
-            {/* Bio wrapped with decorative " " */}
-            <div className="relative pl-1">
-              {/* Opening quote */}
-              <span
-                className="absolute -top-7 -left-2 leading-none pointer-events-none select-none"
-                style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: '5.5rem',
-                  fontWeight: 900,
-                  lineHeight: 1,
-                  background: 'linear-gradient(130deg, rgba(167,100,255,0.45), rgba(124,58,237,0.1))',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                &ldquo;
-              </span>
+            <p className="text-white/55 leading-relaxed">{about.bio}</p>
 
-              <p className="text-white/55 leading-relaxed">{about.bio}</p>
-
-              {/* Closing quote */}
-              <span
-                className="block text-right leading-none pointer-events-none select-none -mt-1"
-                style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: '5.5rem',
-                  fontWeight: 900,
-                  lineHeight: 0.6,
-                  background: 'linear-gradient(130deg, rgba(167,100,255,0.45), rgba(124,58,237,0.1))',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                &rdquo;
-              </span>
-            </div>
+            {/* Closing quote — sits below the paragraph */}
+            <span
+              className="block text-right pointer-events-none select-none mt-2"
+              style={{
+                fontFamily: 'Georgia, serif',
+                fontSize: '5.5rem',
+                fontWeight: 900,
+                lineHeight: 1.2,
+                paddingBottom: '4px',
+                overflow: 'visible',
+                background: 'linear-gradient(130deg, rgba(167,100,255,0.45), rgba(124,58,237,0.1))',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              &rdquo;
+            </span>
           </div>
 
           {/* Right — interests + languages */}
           <div className="reveal">
 
             {/* Interests & Hobbies — circular icon buttons */}
-            <div className="mb-10">
+            <div className="mb-7">
               <h3 className="text-white/40 text-xs tracking-widest uppercase mb-5">
                 Interests &amp; Hobbies
               </h3>
