@@ -46,9 +46,12 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6" style={{ backgroundColor: '#0d0d22' }}>
       <div className="max-w-6xl mx-auto">
-        <p className="text-violet-400 text-xs font-semibold tracking-widest uppercase mb-4">
-          What I Do
-        </p>
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-0.5 h-4 rounded-full" style={{ background: 'linear-gradient(180deg, #7c3aed, #ec4899)' }} />
+          <p className="text-violet-400 text-xs font-semibold tracking-widest uppercase">
+            What I Know
+          </p>
+        </div>
         <h2 className="font-grotesk font-bold text-3xl md:text-4xl text-white mb-12">
           Skills &amp; Toolbox
         </h2>

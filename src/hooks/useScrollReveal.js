@@ -14,7 +14,7 @@ export default function useScrollReveal() {
       { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
     )
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => observer.observe(el))
 
     return () => observer.disconnect()
   }, [])

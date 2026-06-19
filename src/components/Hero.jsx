@@ -20,38 +20,57 @@ export default function Hero() {
         style={{ background: 'rgba(236,72,153,0.1)', animationDelay: '3.5s' }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-12 py-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-8 py-20">
+
         {/* Left — text content */}
         <div className="flex-1 max-w-xl text-center md:text-left">
+
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 border border-white/10 rounded-full px-4 py-1.5 text-xs font-medium text-white/70 mb-6"
-            style={{ background: 'rgba(255,255,255,0.04)' }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-dotPulse" />
-            {owner.availabilityBadge}
+          <div
+            className="inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold text-white/90 mb-6 tracking-wide"
+            style={{
+              background: 'rgba(124,58,237,0.22)',
+              border: '1px solid rgba(167,100,255,0.45)',
+            }}
+          >
+            {owner.badge}
           </div>
 
           {/* Name */}
-          <h1 className="font-grotesk font-extrabold leading-[1.1] mb-5">
-            <span className="block text-5xl md:text-[96px] text-white">{owner.name.split(' ')[0]}</span>
-            <span className="block text-5xl md:text-[96px] grad-text">{owner.name.split(' ')[1]}</span>
+          <h1 className="font-grotesk font-extrabold mb-4" style={{ lineHeight: 1.05 }}>
+            <span className="block text-[64px] md:text-[96px] text-white">
+              {owner.name.split(' ')[0]}
+            </span>
+            {/* pb-3 gives descenders (j, y) room so they aren't clipped */}
+            <span
+              className="block text-[64px] md:text-[96px] grad-text"
+              style={{ paddingBottom: '10px' }}
+            >
+              {owner.name.split(' ')[1]}
+            </span>
           </h1>
 
-          <p className="text-white/50 text-base md:text-lg mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">
+          {/* Tagline — two lines matching the image */}
+          <p className="text-white font-semibold text-lg md:text-xl leading-snug mb-2 max-w-md mx-auto md:mx-0">
             {owner.tagline}
           </p>
+          <p className="text-white/50 text-sm md:text-base mb-8 max-w-sm mx-auto md:mx-0 leading-relaxed">
+            {owner.subtitle}
+          </p>
 
+          {/* Buttons */}
           <div className="flex gap-4 justify-center md:justify-start">
             <a
-              href="#contact"
-              className="font-grotesk font-semibold px-6 py-3 rounded-full text-white text-sm hover:opacity-90 transition-opacity"
+              href="#projects"
+              className="inline-flex items-center gap-2 font-grotesk font-semibold px-7 py-3 rounded-full text-white text-sm hover:opacity-90 transition-opacity"
               style={{ background: 'linear-gradient(130deg, #7c3aed, #ec4899)' }}
             >
-              Hire Me!
+              View Work ↓
             </a>
             <a
               href="#contact"
-              className="font-grotesk font-semibold px-6 py-3 rounded-full border text-white/80 text-sm hover:text-white transition-all"
-              style={{ borderColor: 'rgba(124,58,237,0.5)' }}
+              className="font-grotesk font-semibold px-7 py-3 rounded-full text-white/85 text-sm hover:text-white transition-colors"
+              style={{ border: '1.5px solid rgba(255,255,255,0.22)' }}
             >
               Contact Me
             </a>
@@ -59,15 +78,25 @@ export default function Hero() {
         </div>
 
         {/* Right — profile visual */}
-        <div className="relative flex items-center justify-center w-72 h-72 md:w-[540px] md:h-[540px] flex-shrink-0">
+        {/*
+          Outer box: 420×420 (desktop). Ring: 310×310 centered → 55 px margin each side.
+          Ring center in box: (210, 210), radius 155.
+          "UI/UX Design" chip: placed at ~1:30 o'clock (top-right) — close to ring edge.
+          "Figma" chip:        placed at ~7:30 o'clock (bottom-left) — close to ring edge.
+        */}
+        <div
+          className="relative flex items-center justify-center flex-shrink-0 w-[300px] h-[300px] md:w-[420px] md:h-[420px]"
+        >
           {/* Glow behind ring */}
           <div
             className="absolute inset-0 rounded-full blur-2xl"
-            style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.28) 0%, transparent 68%)' }}
           />
 
           {/* Spinning gradient ring */}
-          <div className="relative ring-grad rounded-full p-[3px] w-64 h-64 md:w-[380px] md:h-[380px]">
+          <div
+            className="ring-grad rounded-full p-[3px] w-[230px] h-[230px] md:w-[310px] md:h-[310px]"
+          >
             <div
               className="w-full h-full rounded-full overflow-hidden"
               style={{ background: '#07071a' }}
@@ -80,24 +109,40 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Floating chips */}
+          {/* Chip — UI/UX Design (top-right, ~1:30 o'clock) */}
           <div
-            className="absolute left-0 top-1/4 border border-white/10 rounded-full px-3 py-1.5 text-xs font-medium text-white/80 animate-chipFloat whitespace-nowrap"
-            style={{ background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(8px)', animationDelay: '0s' }}
+            className="absolute hidden md:flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium text-white/90 whitespace-nowrap"
+            style={{
+              background: 'rgba(10,8,28,0.82)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(10px)',
+              top: '76px',
+              right: '10px',
+            }}
           >
-            ✦ UI / UX
+            <span
+              className="w-2 h-2 rounded-full flex-shrink-0"
+              style={{ background: '#a855f7' }}
+            />
+            UI/UX Design
           </div>
+
+          {/* Chip — Figma (bottom-left, ~7:30 o'clock) */}
           <div
-            className="absolute right-0 top-1/3 border border-white/10 rounded-full px-3 py-1.5 text-xs font-medium text-white/80 animate-chipFloat whitespace-nowrap"
-            style={{ background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(8px)', animationDelay: '0.3s' }}
+            className="absolute hidden md:flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium text-white/90 whitespace-nowrap"
+            style={{
+              background: 'rgba(10,8,28,0.82)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(10px)',
+              bottom: '80px',
+              left: '38px',
+            }}
           >
-            ✦ Design
-          </div>
-          <div
-            className="absolute left-1/4 -bottom-2 border border-white/10 rounded-full px-3 py-1.5 text-xs font-medium text-white/80 animate-chipFloat whitespace-nowrap"
-            style={{ background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(8px)', animationDelay: '0.6s' }}
-          >
-            ✦ Creative
+            <span
+              className="w-2 h-2 rounded-full flex-shrink-0"
+              style={{ background: '#22d3ee' }}
+            />
+            Figma
           </div>
         </div>
       </div>

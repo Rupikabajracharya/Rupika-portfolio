@@ -9,7 +9,7 @@ export default function Footer() {
       style={{ backgroundColor: '#07071a', borderColor: 'rgba(255,255,255,0.05)' }}
     >
       <p className="text-white/30 text-sm">
-        © {footer.year} <span className="grad-text">{footer.name}</span>. All rights reserved.
+        © <span className="grad-text">{footer.name}</span>. All rights reserved.
       </p>
     </footer>
   )

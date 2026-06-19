@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Instagram, Linkedin, Send } from 'lucide-react'
+import { Linkedin, Github, Send } from 'lucide-react'
 import portfolioData from '../data/portfolioData'
 
 export default function Contact() {
@@ -61,9 +61,8 @@ export default function Contact() {
                   onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(124,58,237,0.5)' }}
                   onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)' }}
                 >
-                  {s.iconKey === 'instagram' && <Instagram size={17} />}
-                  {s.iconKey === 'linkedin'  && <Linkedin size={17} />}
-                  {s.iconKey === 'behance'   && <span className="text-xs font-bold">Be</span>}
+                  {s.iconKey === 'linkedin' && <Linkedin size={17} />}
+                  {s.iconKey === 'github'   && <Github   size={17} />}
                 </a>
               ))}
             </div>

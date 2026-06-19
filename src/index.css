@@ -40,6 +40,25 @@ body {
   transform: translateY(0);
 }
 
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-52px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(52px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal-left.in-view,
+.reveal-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Hide scrollbar utility ── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
 /* ── Gradient text ── */
 .grad-text {
   background: linear-gradient(130deg, #c084fc 0%, #a855f7 40%, #ec4899 100%);
@@ -60,22 +79,3 @@ body {
   50% { background-position: 100% 50%; }
 }
 
-/* ── About section decorative quote mark ── */
-.about-quote {
-  position: relative;
-}
-.about-quote::before {
-  content: '\201C';
-  position: absolute;
-  top: -28px;
-  left: -12px;
-  font-size: 7rem;
-  font-weight: 900;
-  line-height: 1;
-  background: linear-gradient(130deg, rgba(124, 58, 237, 0.2), transparent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  pointer-events: none;
-  font-family: Georgia, serif;
-}
