@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import SkillMarquee from './components/SkillMarquee'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
@@ -43,6 +44,7 @@ export default function App() {
     <div className="min-h-screen" style={{ backgroundColor: '#07071a' }}>
       <Navbar />
       <Hero />
+      <SkillMarquee />
       <About />
       <Skills />
       <Experience />

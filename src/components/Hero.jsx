@@ -37,13 +37,12 @@ export default function Hero() {
           </div>
 
           {/* Name */}
-          <h1 className="font-grotesk font-extrabold mb-4" style={{ lineHeight: 1.05 }}>
-            <span className="block text-[64px] md:text-[96px] text-white">
+          <h1 className="font-playfair font-bold mb-4" style={{ lineHeight: 1.05 }}>
+            <span className="block text-[64px] md:text-[88px] text-white">
               {owner.name.split(' ')[0]}
             </span>
-            {/* pb-3 gives descenders (j, y) room so they aren't clipped */}
             <span
-              className="block text-[64px] md:text-[96px] grad-text"
+              className="block text-[64px] md:text-[88px] italic grad-text"
               style={{ paddingBottom: '10px' }}
             >
               {owner.name.split(' ')[1]}

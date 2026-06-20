@@ -25,14 +25,14 @@ const portfolioData = {
     quote: 'Exploring design through simplicity and creativity',
     bio: "I'm a passionate UI/UX designer who believes that great design is not just about how things look — it's about how they feel and work. I strive to create meaningful experiences that connect with people on a deeper level, blending aesthetics with functionality to craft interfaces that are both beautiful and purposeful.",
     interests: [
-      { icon: 'Palette', label: 'Art & Design' },
+      { icon: 'Palette', label: 'Art & sketching' },
       { icon: 'Camera',  label: 'Photography' },
       { icon: 'Music',   label: 'Music' },
       { icon: 'Plane',   label: 'Travel' },
     ],
     languages: [
       { name: 'English', level: 80, note: 'Fluent' },
-      { name: 'Nepali',  level: 80, note: 'Fluent' },
+      { name: 'Nepali',  level: 75, note: 'Fluent' },
       { name: 'Newari',  level: 60, note: 'Fluent' },
       { name: 'Hindi',   level: 45, note: 'Basic' },
     ],

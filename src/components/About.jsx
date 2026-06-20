@@ -1,40 +1,4 @@
-import { Palette, Camera, Music, Plane } from 'lucide-react'
 import portfolioData from '../data/portfolioData'
-
-const iconMap = { Palette, Camera, Music, Plane }
-
-function LangRing({ level, name }) {
-  const size = 72
-  const stroke = 3
-  const r = (size - stroke * 2) / 2
-  const circ = 2 * Math.PI * r
-  const offset = circ * (1 - level / 100)
-  const gradId = `lang-grad-${name.toLowerCase()}`
-  return (
-    <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
-      <defs>
-        <linearGradient id={gradId} x1="1" y1="0" x2="0" y2="0">
-          <stop offset="0%" stopColor="#9f67f0" stopOpacity="0.65" />
-          <stop offset="100%" stopColor="#d472aa" stopOpacity="0.55" />
-        </linearGradient>
-      </defs>
-      {/* Track */}
-      <circle
-        cx={size / 2} cy={size / 2} r={r}
-        fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth={stroke}
-      />
-      {/* Progress arc */}
-      <circle
-        cx={size / 2} cy={size / 2} r={r}
-        fill="none" stroke={`url(#${gradId})`} strokeWidth={stroke}
-        strokeLinecap="round"
-        strokeDasharray={circ}
-        strokeDashoffset={offset}
-        style={{ transition: 'stroke-dashoffset 0.8s ease' }}
-      />
-    </svg>
-  )
-}
 
 export default function About() {
   const { about } = portfolioData
@@ -103,73 +67,55 @@ export default function About() {
           </div>
 
           {/* Right — interests + languages */}
-          <div className="reveal">
+          <div className="reveal flex flex-col gap-6">
 
-            {/* Interests & Hobbies — circular icon buttons */}
-            <div className="mb-7">
-              <h3 className="text-white/40 text-xs tracking-widest uppercase mb-5">
-                Interests &amp; Hobbies
+            {/* Beyond The Screen — pill tags */}
+            <div
+              className="rounded-2xl p-6"
+              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <h3 className="text-white/50 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+                Beyond The Screen
               </h3>
-              <div className="flex flex-wrap gap-5">
-                {about.interests.map((item) => {
-                  const Icon = iconMap[item.icon]
-                  return (
-                    <div key={item.label} className="flex flex-col items-center gap-2">
-                      <div
-                        className="w-[62px] h-[62px] rounded-full flex items-center justify-center"
-                        style={{
-                          background: 'rgba(255,255,255,0.05)',
-                          border: '1px solid rgba(255,255,255,0.1)',
-                        }}
-                      >
-                        {Icon && <Icon size={22} strokeWidth={1.6} className="text-white/80" />}
-                      </div>
-                      <span className="text-xs text-white/50 text-center max-w-[64px] leading-tight">
-                        {item.label}
-                      </span>
-                    </div>
-                  )
-                })}
+              <div className="flex flex-wrap gap-3">
+                {about.interests.map((item) => (
+                  <span
+                    key={item.label}
+                    className="px-4 py-1.5 rounded-full text-sm text-white/75"
+                    style={{
+                      background: 'rgba(255,255,255,0.06)',
+                      border: '1px solid rgba(255,255,255,0.12)',
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                ))}
               </div>
             </div>
 
-            {/* Languages — circular progress rings */}
-            <div>
-              <h3 className="text-white/40 text-xs tracking-widest uppercase mb-5">
+            {/* Languages — horizontal bars */}
+            <div
+              className="rounded-2xl p-6"
+              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <h3 className="text-white/50 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
                 Languages
               </h3>
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-col gap-4">
                 {about.languages.map((lang) => (
-                  <div key={lang.name} className="flex flex-col items-center gap-1.5">
-                    {/* Ring + % label */}
-                    <div className="relative">
-                      <LangRing level={lang.level} name={lang.name} />
-                      {/* Centered text over the ring */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center">
-                        <span className="text-sm font-bold text-white leading-none">
-                          {lang.level}%
-                        </span>
-                      </div>
+                  <div key={lang.name} className="flex items-center gap-4">
+                    <span className="text-sm font-medium text-white/80 w-14 shrink-0">{lang.name}</span>
+                    <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                      <div
+                        className="h-2 rounded-full"
+                        style={{
+                          width: `${lang.level}%`,
+                          background: 'linear-gradient(90deg, #7c3aed, #ec4899)',
+                          transition: 'width 0.8s ease',
+                        }}
+                      />
                     </div>
-                    {/* Language name */}
-                    <span className="text-sm font-medium text-white/80">{lang.name}</span>
-                    {/* Fluency label */}
-                    <span
-                      className="text-[10px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full"
-                      style={{
-                        background: lang.level >= 80
-                          ? 'rgba(124,58,237,0.18)'
-                          : 'rgba(255,255,255,0.06)',
-                        color: lang.level >= 80
-                          ? '#c084fc'
-                          : 'rgba(255,255,255,0.35)',
-                        border: lang.level >= 80
-                          ? '1px solid rgba(124,58,237,0.3)'
-                          : '1px solid rgba(255,255,255,0.1)',
-                      }}
-                    >
-                      {lang.note}
-                    </span>
+                    <span className="text-xs text-white/50 w-9 text-right shrink-0">{lang.level}%</span>
                   </div>
                 ))}
               </div>
