@@ -81,7 +81,7 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="py-24 px-6" style={{ backgroundColor: '#0d0d22' }}>
+    <section id="projects" className="py-12 md:py-20 px-6" style={{ backgroundColor: '#0d0d22' }}>
       <div className="max-w-6xl mx-auto">
 
         <p className="text-violet-400 text-xs font-semibold tracking-widest uppercase mb-4">
@@ -154,7 +154,7 @@ export default function Projects() {
           {filtered.map((project) => (
             <article
               key={project.title}
-              className="flex-shrink-0 w-[70vw] md:w-[calc(33.33%-16px)] rounded-2xl overflow-hidden border transition-colors duration-300 group"
+              className="flex-shrink-0 w-[88vw] sm:w-[75vw] md:w-[calc(33.33%-16px)] rounded-2xl overflow-hidden border transition-colors duration-300 group"
               style={{
                 background:   'rgba(255,255,255,0.03)',
                 borderColor:  'rgba(255,255,255,0.07)',

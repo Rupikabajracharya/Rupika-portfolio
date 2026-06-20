@@ -36,7 +36,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 px-6" style={{ backgroundColor: '#07071a' }}>
+    <section id="contact" className="py-12 md:py-20 px-6" style={{ backgroundColor: '#07071a' }}>
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Left */}

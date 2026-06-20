@@ -44,7 +44,7 @@ export default function Skills() {
   const { skills } = portfolioData
 
   return (
-    <section id="skills" className="py-24 px-6" style={{ backgroundColor: '#0d0d22' }}>
+    <section id="skills" className="py-12 md:py-20 px-6" style={{ backgroundColor: '#0d0d22' }}>
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-2 mb-4">
           <div className="w-0.5 h-4 rounded-full" style={{ background: 'linear-gradient(180deg, #7c3aed, #ec4899)' }} />

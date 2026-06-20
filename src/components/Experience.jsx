@@ -4,7 +4,7 @@ export default function Experience() {
   const { experience } = portfolioData
 
   return (
-    <section id="experience" className="py-24 px-6" style={{ backgroundColor: '#07071a' }}>
+    <section id="experience" className="py-12 md:py-20 px-6" style={{ backgroundColor: '#07071a' }}>
       <div className="max-w-6xl mx-auto">
 
         {/* Section label */}

@@ -38,11 +38,11 @@ export default function Hero() {
 
           {/* Name */}
           <h1 className="font-playfair font-bold mb-4" style={{ lineHeight: 1.05 }}>
-            <span className="block text-[64px] md:text-[88px] text-white">
+            <span className="block text-[44px] sm:text-[56px] md:text-[88px] text-white">
               {owner.name.split(' ')[0]}
             </span>
             <span
-              className="block text-[64px] md:text-[88px] italic grad-text"
+              className="block text-[36px] sm:text-[48px] md:text-[88px] italic grad-text"
               style={{ paddingBottom: '10px' }}
             >
               {owner.name.split(' ')[1]}

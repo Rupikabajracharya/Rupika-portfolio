@@ -4,11 +4,11 @@ export default function About() {
   const { about } = portfolioData
 
   return (
-    <section id="about" className="py-28 px-6" style={{ backgroundColor: '#07071a' }}>
+    <section id="about" className="py-14 md:py-24 px-6" style={{ backgroundColor: '#07071a' }}>
       <div className="max-w-6xl mx-auto">
 
         {/* "About Me" label with decorative quotes */}
-        <div className="relative inline-block mb-14">
+        <div className="relative inline-block mb-8 md:mb-12">
           <span
             className="absolute -top-5 -left-3 pointer-events-none select-none leading-none"
             style={{
@@ -29,7 +29,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-32">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-20">
 
           {/* Left — quote + bio */}
           <div className="reveal">
