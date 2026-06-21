@@ -10,7 +10,7 @@ const portfolioData = {
   },
 
   nav: {
-    logo: 'rupika',
+    logo: 'Rupika',
     links: [
       { label: 'Home',       href: '#home' },
       { label: 'About',      href: '#about' },
@@ -31,10 +31,10 @@ const portfolioData = {
       { icon: 'Plane',   label: 'Travel' },
     ],
     languages: [
-      { name: 'English', level: 80, note: 'Fluent' },
-      { name: 'Nepali',  level: 75, note: 'Fluent' },
-      { name: 'Newari',  level: 60, note: 'Fluent' },
-      { name: 'Hindi',   level: 45, note: 'Basic' },
+      { name: 'English', note: 'Fluent' },
+      { name: 'Nepali',  note: 'Fluent' },
+      { name: 'Newari',  note: 'Fluent' },
+      { name: 'Hindi',   note: 'Basic' },
     ],
   },
 

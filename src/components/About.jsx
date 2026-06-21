@@ -93,7 +93,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* Languages — horizontal bars */}
+            {/* Languages */}
             <div
               className="rounded-2xl p-6"
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
@@ -101,21 +101,18 @@ export default function About() {
               <h3 className="text-white/50 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
                 Languages
               </h3>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-row gap-3">
                 {about.languages.map((lang) => (
-                  <div key={lang.name} className="flex items-center gap-4">
-                    <span className="text-sm font-medium text-white/80 w-14 shrink-0">{lang.name}</span>
-                    <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.08)' }}>
-                      <div
-                        className="h-2 rounded-full"
-                        style={{
-                          width: `${lang.level}%`,
-                          background: 'linear-gradient(90deg, #7c3aed, #ec4899)',
-                          transition: 'width 0.8s ease',
-                        }}
-                      />
-                    </div>
-                    <span className="text-xs text-white/50 w-9 text-right shrink-0">{lang.level}%</span>
+                  <div
+                    key={lang.name}
+                    className="flex-1 flex flex-col gap-2 rounded-[18px] px-4 py-4"
+                    style={{
+                      background: 'rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                    }}
+                  >
+                    <span className="text-sm text-white/75 leading-none">{lang.name}</span>
+                    <span className="text-[10px] font-medium tracking-wide" style={{ color: '#A78BFA' }}>{lang.note}</span>
                   </div>
                 ))}
               </div>

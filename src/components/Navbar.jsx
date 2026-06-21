@@ -25,10 +25,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a
-          href="#home"
-          className="font-grotesk font-bold text-xl text-white tracking-wider"
-        >
+        <a href="#home" className="font-playfair font-bold italic text-xl grad-text tracking-wide">
           {nav.logo}
         </a>
 
