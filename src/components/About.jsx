@@ -7,39 +7,39 @@ export default function About() {
     <section id="about" className="py-14 md:py-24 px-6" style={{ backgroundColor: '#07071a' }}>
       <div className="max-w-6xl mx-auto">
 
-        {/* "About Me" label with decorative quotes */}
-        <div className="relative inline-block mb-8 md:mb-12">
-          <span
-            className="absolute -top-5 -left-3 pointer-events-none select-none leading-none"
-            style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: '4rem',
-              fontWeight: 900,
-              lineHeight: 1,
-              background: 'linear-gradient(130deg, rgba(167,100,255,0.55), rgba(124,58,237,0.15))',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
-            &ldquo;
-          </span>
-          <p className="text-violet-400 text-xs font-semibold tracking-widest uppercase px-2">
-            About Me
-          </p>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-10 md:gap-20">
 
           {/* Left — quote + bio */}
           <div className="reveal">
+            {/* "About Me" label */}
+            <p className="text-violet-400 text-xs font-semibold tracking-widest uppercase mb-4">
+              About Me
+            </p>
+
             {/* Accent line */}
             <div
-              className="w-10 h-1 rounded mb-5"
+              className="w-10 h-1 rounded mb-4"
               style={{ background: 'linear-gradient(90deg, #7c3aed, #ec4899)' }}
             />
 
-            {/* Heading — clean, no quotes */}
+            {/* Decorative opening quote — below the gradient line, above heading */}
+            <div
+              className="pointer-events-none select-none mb-0"
+              style={{
+                fontFamily: 'Georgia, serif',
+                fontSize: '3.5rem',
+                fontWeight: 900,
+                lineHeight: 0.75,
+                background: 'linear-gradient(130deg, rgba(167,100,255,0.55), rgba(124,58,237,0.15))',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              &ldquo;
+            </div>
+
+            {/* Heading */}
             <h2 className="font-grotesk font-bold text-2xl md:text-3xl text-white leading-snug mb-8">
               {about.quote}
             </h2>

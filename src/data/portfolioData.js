@@ -26,7 +26,7 @@ const portfolioData = {
     bio: "I'm a passionate UI/UX designer who believes that great design is not just about how things look — it's about how they feel and work. I strive to create meaningful experiences that connect with people on a deeper level, blending aesthetics with functionality to craft interfaces that are both beautiful and purposeful.",
     interests: [
       { icon: 'Palette', label: 'Art & sketching' },
-      { icon: 'Camera',  label: 'Photography' },
+      { icon: 'BookOpen', label: 'Reading' },
       { icon: 'Music',   label: 'Music' },
       { icon: 'Plane',   label: 'Travel' },
     ],

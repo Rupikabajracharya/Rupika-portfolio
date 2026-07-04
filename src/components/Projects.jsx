@@ -154,10 +154,15 @@ export default function Projects() {
             {filtered.map((project) => (
               <article
                 key={project.title}
+                onClick={() => {
+                  const url = project.github || project.link
+                  if (!project.wip && url) window.open(url, '_blank', 'noopener,noreferrer')
+                }}
                 className="flex-shrink-0 w-[88vw] sm:w-[75vw] md:w-[calc(33.33%-16px)] rounded-2xl overflow-hidden transition-colors duration-300 group"
                 style={{
                   background:   project.wip ? 'rgba(124,58,237,0.04)' : 'rgba(255,255,255,0.03)',
                   border:       project.wip ? '1.5px dashed rgba(168,85,247,0.25)' : '1px solid rgba(255,255,255,0.07)',
+                  cursor:       !project.wip && (project.github || project.link) ? 'pointer' : 'default',
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = project.wip ? 'rgba(168,85,247,0.5)' : 'rgba(168,85,247,0.35)' }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = project.wip ? 'rgba(168,85,247,0.25)' : 'rgba(255,255,255,0.07)' }}
@@ -240,14 +245,16 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1.5 text-violet-400 text-sm font-medium hover:text-white transition-colors"
                         >
                           <Github size={14} /> Go to GitHub
                         </a>
                       )}
-                      {!project.github && project.link && (
+{!project.github && project.link && (
                         <a
                           href={project.link}
+                          onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1 text-violet-400 text-sm font-medium hover:text-white transition-colors"
                         >
                           View Project <span>→</span>
