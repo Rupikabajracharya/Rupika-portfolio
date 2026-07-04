@@ -71,7 +71,7 @@ export default function About() {
 
             {/* Beyond The Screen — pill tags */}
             <div
-              className="rounded-2xl p-6"
+              className="rounded-2xl p-4 sm:p-6"
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
             >
               <h3 className="text-white/50 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
@@ -95,13 +95,13 @@ export default function About() {
 
             {/* Languages */}
             <div
-              className="rounded-2xl p-6"
+              className="rounded-2xl p-4 sm:p-6"
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
             >
               <h3 className="text-white/50 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
                 Languages
               </h3>
-              <div className="flex flex-row gap-3">
+              <div className="flex flex-wrap sm:flex-row gap-3">
                 {about.languages.map((lang) => (
                   <div
                     key={lang.name}

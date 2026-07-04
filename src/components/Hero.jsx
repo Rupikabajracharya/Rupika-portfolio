@@ -84,7 +84,7 @@ export default function Hero() {
           "Figma" chip:        placed at ~7:30 o'clock (bottom-left) — close to ring edge.
         */}
         <div
-          className="relative flex items-center justify-center flex-shrink-0 w-[300px] h-[300px] md:w-[420px] md:h-[420px]"
+          className="relative flex items-center justify-center flex-shrink-0 w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px]"
         >
           {/* Glow behind ring */}
           <div
@@ -94,7 +94,7 @@ export default function Hero() {
 
           {/* Spinning gradient ring */}
           <div
-            className="ring-grad rounded-full p-[3px] w-[230px] h-[230px] md:w-[310px] md:h-[310px]"
+            className="ring-grad rounded-full p-[3px] w-[195px] h-[195px] sm:w-[245px] sm:h-[245px] md:w-[310px] md:h-[310px]"
           >
             <div
               className="w-full h-full rounded-full overflow-hidden"

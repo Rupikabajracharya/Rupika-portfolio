@@ -92,15 +92,15 @@ export default function Projects() {
           </h2>
 
           {/* ── Tabs + Arrows row ── */}
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-8 gap-3">
 
             {/* Filter tabs */}
-            <div className="flex gap-2">
+            <div className="flex gap-2 overflow-x-auto no-scrollbar flex-shrink-0">
               {TABS.map(t => (
                 <button
                   key={t.key}
                   onClick={() => switchTab(t.key)}
-                  className="px-5 py-1.5 rounded-full text-sm font-semibold transition-all duration-200"
+                  className="px-4 sm:px-5 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 whitespace-nowrap"
                   style={
                     tab === t.key
                       ? { background: 'linear-gradient(130deg,#7c3aed,#ec4899)', color: '#fff' }

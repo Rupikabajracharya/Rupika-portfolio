@@ -38,7 +38,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-12 md:py-20 px-6" style={{ backgroundColor: '#07071a' }}>
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* Left */}
           <div className="reveal">
             <p className="text-violet-400 text-xs font-semibold tracking-widest uppercase mb-6">
@@ -73,7 +73,7 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className={`reveal ${shake ? 'animate-shakeForm' : ''}`}
           >
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="text-white/40 text-xs mb-2 block">Name</label>
                 <input

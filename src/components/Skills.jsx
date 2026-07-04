@@ -55,7 +55,7 @@ export default function Skills() {
         <h2 className="font-grotesk font-bold text-3xl md:text-4xl text-white mb-12">
           Skills &amp; Toolbox
         </h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {skills.map((skill) => (
             <SkillCard key={skill.title} skill={skill} />
           ))}

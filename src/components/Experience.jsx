@@ -37,7 +37,7 @@ export default function Experience() {
             {experience.map((item) => (
               <div
                 key={item.org}
-                className="reveal rounded-xl p-6 border transition-colors duration-300"
+                className="reveal rounded-xl p-4 sm:p-6 border transition-colors duration-300"
                 style={{
                   background: 'rgba(255,255,255,0.03)',
                   borderColor: 'rgba(255,255,255,0.07)',
