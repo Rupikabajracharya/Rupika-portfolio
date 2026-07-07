@@ -1,3 +1,7 @@
+import projectLibraryImg from '../assets/project-library.png'
+import projectConsoleImg from '../assets/project-console.png'
+import projectDesignImg from '../assets/project-design.png'
+
 const portfolioData = {
   owner: {
     name: 'Rupika Bajracharya',
@@ -86,6 +90,7 @@ const portfolioData = {
   projects: [
     {
       thumbVariant: 'java',
+      image: projectLibraryImg,
       category: 'code',
       tag: 'Java · Code',
       title: 'Pustakalaya – Library Management System',
@@ -96,6 +101,7 @@ const portfolioData = {
     },
     {
       thumbVariant: 'console',
+      image: projectConsoleImg,
       category: 'code',
       tag: 'Java · Code',
       title: 'Library Management System – Console',
@@ -105,6 +111,7 @@ const portfolioData = {
     },
     {
       thumbVariant: 'wip',
+      image: projectDesignImg,
       category: 'design',
       tag: 'Design · Coming Soon',
       title: 'New Design Project',
